@@ -84,6 +84,7 @@ class Neologism:
             word = self.ALL_WORDS.get(key)
             if word:
                 entropy_all -= math.log(word[1]) * word[1] * count  # 邻字的信息熵
+                #！！！！这里应该是有点问题，信息熵应该用左右邻词自己的词频，而不是整个word的词频！！！！！
         return entropy_all
 
     def handle(self):
